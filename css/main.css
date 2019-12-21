@@ -36,9 +36,24 @@ html {
     background-size: cover;
 }
 
+#standardContainer {
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 1vw;
+}
+
+@font-face {
+    font-family: 'biofont';
+    src: url('../fonts/biofont.ttf');
+}
+
 @font-face {
     font-family: 'tomasfly';
     src: url('../fonts/Blockt.ttf');
+}
+
+#container {
+    padding: 3vw;
 }
 
 #logo {
