@@ -32,15 +32,40 @@
 
 <body>
     <div id='container'>
-        <div id='logo'>
-            Tomasfly
-            <div id='menu'>
-                <a href="bio.html">Bio</a>
-                <a href="art.html">Art</a>
-                <a href="programming.html">Programming</a>
-                <a href="contact.html">Contact</a>
-            </div>
+
+        <div id='menu'>
+            <a href="bio.html">Bio</a>
+            <a href="art.html">Art</a>
+            <a href="programming.html">Programming</a>
+            <a href="contact.html">Contact</a>
         </div>
+        <h1>Getting the date with Javascript</h1>
+        <p id="fecha">
+        </p>
+
+        <script>
+            var d = new Date();
+            document.getElementById("fecha").innerHTML = d;
+        </script>
+        <h1>HTTP Request through Javascript</h1>
+        The following javascript code gets a resource from the internet, parses it as Json and the output in the screen one of its fields.
+        <input type="submit" value="Get Request" onclick="submit()">
+        <script type="text/javascript">
+            function submit() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) {
+                        var jsonResponse = JSON.parse(xhr.response);
+                        document.getElementById("getTitle").innerHTML = jsonResponse.id;
+                    }
+                }
+                xhr.open('get', 'https://jsonplaceholder.typicode.com/posts/1', true);
+                //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                xhr.send();
+            }
+        </script>
+        <p id="getTitle"></p>
+
     </div>
 
     <!--[if IE]>

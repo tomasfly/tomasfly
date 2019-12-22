@@ -14,34 +14,64 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <style>
+        .mySlides {
+            display: none;
+        }
+    </style>
+
     <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
     <div id='container'>
 
-        <div id='logo'>
-            Tomasfly
-            <div id='menu'>
-                <a href="bio.html">Bio</a>
-                <a href="art.html">Art</a>
-                <a href="programming.html">Programming</a>
-                <a href="contact.html">Contact</a>
-            </div>
+
+        <div id='menu'>
+            <a href="bio.html">Bio</a>
+            <a href="art.html">Art</a>
+            <a href="programming.html">Programming</a>
+            <a href="contact.html">Contact</a>
         </div>
+        <div class="w3-content w3-display-container">
+            <img class="mySlides" src="./img/bike.jpg" style="width:50%">
+            <img class="mySlides" src="./img/lake.jpg" style="width:50%">
+            <img class="mySlides" src="./img/germany.jpg" style="width:50%">
+            <!-- <img class="mySlides" src="./img/leaves.jpg" style="width:100%"> -->
+
+            <button onclick="plusDivs(-1)">&#10094;</button>
+            <button onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = x.length
+                }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex - 1].style.display = "block";
+            }
+        </script>
     </div>
-
-
     <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
     <!-- Add your site or application content here -->
-
-
-
-
-
 
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
